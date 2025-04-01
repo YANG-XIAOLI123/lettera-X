@@ -4,7 +4,7 @@ export const configurazione = {
   dimensione: 0.8,
   interlinea: 0.7,
   allineamento: "centro",
-  percorsoFont: "./assets/BAUHS93.ttf",
+  percorsoFont: "./assets/Bauhaus 93 Regular.ttf",
 
   sensibilitàMicrofonoBase: 1,
   densitàPuntiBase: 1,
