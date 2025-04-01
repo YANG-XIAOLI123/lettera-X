@@ -47,15 +47,33 @@ export function disegnaPunto({
   rotate(frameCount);
   stroke("blue");
   fill("pink");
-  rect(0, 0, 40);
+  disegnaPoligono(0, 0, 20, 5); // 边形
+  image(img, 0, 0, 50, 50);
+
   pop();
+}
+let img;
+export function caricamentoRisorse() {
+  img = loadImage("./assets/画板 13.png");
+}
+
+//
+
+function disegnaPoligono(x, y, raggio, lati) {
+  const angolo = 360 / lati;
+  beginShape();
+  for (let i = 0; i < lati; i++) {
+    const px = x + cos(i * angolo) * raggio;
+    const py = y + sin(i * angolo) * raggio;
+    vertex(px, py);
+  }
+  endShape(CLOSE);
 }
 
 /**
  * Carica le risorse necessarie
  * Esempio: carica immagini, suoni, ecc.
  */
-export function caricamentoRisorse() {}
 
 /**
  * Imposta le impostazioni iniziali
@@ -65,6 +83,7 @@ export function impostazioni() {
   frameRate(30);
   angleMode(DEGREES);
   rectMode(CENTER);
+  imageMode(CENTER);
 }
 
 /**
