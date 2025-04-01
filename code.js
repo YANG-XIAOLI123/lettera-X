@@ -83,6 +83,7 @@ export function impostazioni() {
   frameRate(30);
   angleMode(DEGREES);
   rectMode(CENTER);
+  imageMode(CENTER);
 }
 
 /**
