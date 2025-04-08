@@ -47,8 +47,22 @@ export function disegnaPunto({
   rotate(frameCount);
   stroke("blue");
   fill("pink");
-  rect(0, 0, 40);
+  disegnaPoligono(0, 0, 20, 5); // 边形
+
   pop();
+}
+
+//
+
+function disegnaPoligono(x, y, raggio, lati) {
+  const angolo = 360 / lati;
+  beginShape();
+  for (let i = 0; i < lati; i++) {
+    const px = x + cos(i * angolo) * raggio;
+    const py = y + sin(i * angolo) * raggio;
+    vertex(px, py);
+  }
+  endShape(CLOSE);
 }
 
 /**
